@@ -132,7 +132,7 @@ if [ $configure_webserver != "yes" ]
 then
 echo -en "\n\n***************************************************************************\n"
 echo "Woot! Woot!! Chatwoot server installation is complete"
-echo "The server will be accessible at http://$public_ip:3000"
+echo "The server will be accessible at http://$public_ip:2083"
 echo "To configure a domain and SSL certificate, follow the guide at https://www.chatwoot.com/docs/deployment/deploy-chatwoot-in-linux-vm"
 echo "***************************************************************************"
 else
@@ -145,7 +145,7 @@ ln -s /etc/nginx/sites-available/nginx_chatwoot.conf /etc/nginx/sites-enabled/ng
 systemctl restart nginx
 sudo -i -u chatwoot << EOF
 cd chatwoot
-sed -i "s/http:\/\/0.0.0.0:3000/https:\/\/$domain_name/g" .env
+sed -i "s/http:\/\/0.0.0.0:2083/https:\/\/$domain_name/g" .env
 EOF
 systemctl restart chatwoot.target
 echo -en "\n\n***************************************************************************\n"
