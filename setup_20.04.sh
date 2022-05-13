@@ -61,7 +61,7 @@ adduser chatwoot rvm
 
 if [ $install_pg_redis != "no" ]
 then
-pg_pass=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 15 ; echo '')
+pg_pass=$(echo 'postgres')
 sudo -i -u postgres psql << EOF
 \set pass `echo $pg_pass`
 CREATE USER chatwoot CREATEDB;
