@@ -114,6 +114,8 @@ if [ $install_pg_redis != "no" ]
 then
 sudo -i -u chatwoot << EOF
 cd chatwoot
+RAILS_ENV=production bundle exec rake db:create
+RAILS_ENV=production bundle exec rake db:reset
 EOF
 fi
 
