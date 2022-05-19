@@ -91,7 +91,7 @@ rvm use 3.0.2 --default
 git clone https://gitlab.com/fa-kfmt/chatwoot.git
 cd chatwoot
 if [[ -z "$1" ]]; then
-git checkout port2083;
+git checkout main;
 else
 git checkout $1;
 fi
