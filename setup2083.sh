@@ -115,7 +115,7 @@ then
 sudo -i -u chatwoot << EOF
 cd chatwoot
 RAILS_ENV=production bundle exec rake db:create
-RAILS_ENV=production bundle exec rake db:reset DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+RAILS_ENV=production bundle exec rake db:reset
 EOF
 fi
 
