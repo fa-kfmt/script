@@ -91,7 +91,7 @@ rvm use 3.0.2 --default
 git clone https://gitlab.com/fa-kfmt/chatwoot.git
 cd chatwoot
 if [[ -z "$1" ]]; then
-git checkout testfix;
+git checkout main;
 else
 git checkout $1;
 fi
@@ -114,8 +114,7 @@ if [ $install_pg_redis != "no" ]
 then
 sudo -i -u chatwoot << EOF
 cd chatwoot
-RAILS_ENV=production bundle exec rake db:create
-RAILS_ENV=production bundle exec rake db:reset
+RAILS_ENV=production bundle exec rake db:migrate
 EOF
 fi
 
